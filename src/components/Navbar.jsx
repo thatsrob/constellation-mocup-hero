@@ -45,7 +45,7 @@ const glassBar =
 
 function Logo() {
   return (
-    <a href="#" className="flex shrink-0 items-center gap-2.5">
+    <a href="/" className="flex shrink-0 items-center gap-2.5">
       <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-neutral-100/90 ring-1 ring-neutral-200/80">
         <svg
           viewBox="0 0 24 24"

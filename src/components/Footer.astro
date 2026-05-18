@@ -1,0 +1,180 @@
+---
+const year = new Date().getFullYear();
+
+const companyLinks = [
+  { label: "Book a Call", href: "#content", external: true },
+  { label: "Client Results", href: "#content" },
+  { label: "About Constellation", href: "#content" },
+];
+
+const practiceLinks = [
+  { label: "Personal Injury", href: "#content" },
+  { label: "Immigration", href: "#content" },
+  { label: "Family Law", href: "#content" },
+  { label: "Criminal Defense", href: "#content" },
+];
+
+const serviceLinks = [
+  { label: "SEO for Law Firms", href: "#content" },
+  { label: "Google Ads (PPC)", href: "#content" },
+  { label: "Website Design", href: "#content" },
+  { label: "Content Marketing", href: "#content" },
+];
+
+const resourceLinks = [
+  { label: "Blog", href: "#content" },
+  { label: "Case Studies", href: "#content" },
+  { label: "Marketing Guides", href: "#content" },
+  { label: "LinkedIn", href: "https://linkedin.com", external: true },
+];
+---
+
+<footer class="bg-white text-neutral-900">
+  <div class="mx-auto max-w-6xl px-6 md:px-10 lg:px-14">
+    <div
+      class="grid grid-cols-2 gap-10 border-b border-neutral-200 py-14 sm:grid-cols-4 sm:gap-8 md:py-16"
+    >
+      <div>
+        <p class="mb-4 text-sm font-semibold text-neutral-900">Company</p>
+        <ul class="flex flex-col gap-2.5">
+          {
+            companyLinks.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="group inline-flex items-center gap-1.5 text-sm text-neutral-600 transition-colors hover:text-neutral-900"
+                  {...(link.external
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                >
+                  <span>{link.label}</span>
+                  {link.external && (
+                    <svg
+                      class="h-3.5 w-3.5 shrink-0 opacity-45"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M7 17L17 7M7 7h10v10"
+                      />
+                    </svg>
+                  )}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      {
+        [practiceLinks, serviceLinks, resourceLinks].map((links) => (
+          <div>
+            <ul class="flex flex-col gap-2.5">
+              {links.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    class="group inline-flex items-center gap-1.5 text-sm text-neutral-600 transition-colors hover:text-neutral-900"
+                    {...(link.external
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
+                  >
+                    <span>{link.label}</span>
+                    {link.external && (
+                      <svg
+                        class="h-3.5 w-3.5 shrink-0 opacity-45"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        aria-hidden="true"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M7 17L17 7M7 7h10v10"
+                        />
+                      </svg>
+                    )}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <div
+      class="grid gap-8 border-b border-neutral-200 py-10 md:grid-cols-2 md:gap-12 md:py-12"
+    >
+      <p class="text-xs leading-relaxed text-neutral-500">
+        Constellation Marketing provides digital marketing services tailored for
+        law firms. Past performance and case results referenced on this site
+        belong to our clients and do not guarantee similar outcomes for your
+        practice.
+      </p>
+      <p class="text-xs leading-relaxed text-neutral-500">
+        Nothing on this website constitutes legal advice. Attorney advertising
+        rules vary by jurisdiction—consult your state bar before publishing
+        campaign claims. All trademarks belong to their respective owners.
+      </p>
+    </div>
+  </div>
+
+  <div class="py-10 md:py-14">
+    <div class="flex w-full justify-center overflow-hidden px-4">
+      <p
+        class="w-full max-w-[100vw] text-center text-[clamp(2.5rem,11.5vw,9.5rem)] font-bold leading-[0.9] tracking-tight text-neutral-950"
+        aria-hidden="true"
+      >
+        CONSTELLATION
+      </p>
+    </div>
+    <span class="sr-only">Constellation Marketing</span>
+  </div>
+
+  <div class="mx-auto max-w-6xl px-6 md:px-10 lg:px-14">
+    <div
+      class="flex flex-col gap-4 border-t border-neutral-200 py-6 text-xs text-neutral-500 sm:flex-row sm:items-center sm:justify-between sm:py-8"
+    >
+      <p>Constellation Marketing © {year}</p>
+      <div
+        class="flex flex-wrap items-center gap-x-5 gap-y-2 sm:justify-center"
+      >
+        <a href="#content" class="transition-colors hover:text-neutral-800">
+          Privacy Policy
+        </a>
+        <a href="#content" class="transition-colors hover:text-neutral-800">
+          Terms of Service
+        </a>
+      </div>
+      <a
+        href="https://linkedin.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 transition-colors hover:text-neutral-800 sm:justify-end"
+      >
+        LinkedIn
+        <svg
+          class="h-3.5 w-3.5 shrink-0 opacity-45"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M7 17L17 7M7 7h10v10"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
