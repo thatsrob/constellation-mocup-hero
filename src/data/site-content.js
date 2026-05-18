@@ -378,33 +378,159 @@ export const navLinks = [
   {
     label: "Practice Areas",
     href: "#services",
+    menu: {
+      title: "Practice area marketing",
+      description: "Tailored campaigns for the cases that matter most to your firm.",
+    },
     children: [
-      { label: "Bankruptcy", href: "#services" },
-      { label: "Criminal Defense", href: "#services" },
-      { label: "Estate Planning", href: "#services" },
-      { label: "Family Law", href: "#services" },
-      { label: "Immigration", href: "#services" },
-      { label: "Personal Injury", href: "#services" },
+      {
+        label: "Bankruptcy",
+        href: "#services",
+        description: "Reach debt relief seekers ready to retain.",
+        icon: "document",
+        panelTitle: "Bankruptcy Marketing",
+        panelDescription:
+          "Target high-intent searches and convert visitors into booked consultations.",
+      },
+      {
+        label: "Criminal Defense",
+        href: "#services",
+        description: "Urgent-intent leads when clients need you most.",
+        icon: "shield",
+        panelTitle: "Criminal Defense",
+        panelDescription:
+          "Dominate local search and paid channels for time-sensitive case types.",
+      },
+      {
+        label: "Estate Planning",
+        href: "#services",
+        description: "Build trust with families planning ahead.",
+        icon: "estate",
+        panelTitle: "Estate Planning",
+        panelDescription:
+          "Educational content and conversion paths for long-consideration matters.",
+      },
+      {
+        label: "Family Law",
+        href: "#services",
+        description: "Compassionate messaging that converts.",
+        icon: "users",
+        panelTitle: "Family Law",
+        panelDescription:
+          "Sensitive creative and landing pages designed for emotional decision moments.",
+      },
+      {
+        label: "Immigration",
+        href: "#services",
+        description: "Multilingual SEO and ads that scale.",
+        icon: "globe",
+        panelTitle: "Immigration Law",
+        panelDescription:
+          "Proven playbooks used by top immigration firms nationwide.",
+      },
+      {
+        label: "Personal Injury",
+        href: "#services",
+        description: "High-value cases at sustainable CPA.",
+        icon: "scale",
+        panelTitle: "Personal Injury",
+        panelDescription:
+          "PPC and SEO systems built for case value, not just lead volume.",
+      },
     ],
   },
   {
     label: "Services",
     href: "#services",
+    menu: {
+      title: "Full-service growth",
+      description: "Everything your firm needs to win more cases online.",
+    },
     children: [
-      { label: "SEO", href: "#services" },
-      { label: "PPC", href: "#services" },
-      { label: "Website", href: "#services" },
+      {
+        label: "SEO",
+        href: "#services",
+        description: "Traditional & AI search dominance.",
+        icon: "search",
+        panelTitle: "Law Firm SEO",
+        panelDescription:
+          "First-page rankings, map pack visibility, and AI-ready content.",
+      },
+      {
+        label: "PPC",
+        href: "#services",
+        description: "Better leads, lower cost per case.",
+        icon: "chart",
+        panelTitle: "Google Ads (PPC)",
+        panelDescription:
+          "Precision campaigns optimized weekly for signed retainers.",
+      },
+      {
+        label: "Website",
+        href: "#services",
+        description: "Sites engineered to convert visitors.",
+        icon: "layout",
+        panelTitle: "Website Design",
+        panelDescription:
+          "Fast, ADA-compliant sites with intake flows that book consultations.",
+      },
     ],
   },
   {
     label: "Resources",
     href: "#faq",
+    menu: {
+      title: "Learn & explore",
+      description: "Insights, guides, and proof from 200+ law firm partners.",
+    },
     children: [
-      { label: "About Us", href: "#why-us" },
-      { label: "Our Approach", href: "#growth-system" },
-      { label: "Blog", href: "https://goconstellation.com/blog/" },
-      { label: "Podcast", href: "https://goconstellation.com/" },
-      { label: "FAQ", href: "#faq" },
+      {
+        label: "About Us",
+        href: "#why-us",
+        description: "Who we are and why firms stay.",
+        icon: "info",
+        panelTitle: "About Constellation",
+        panelDescription:
+          "A law-firm-only agency with 98.7% retention and measurable ROI.",
+      },
+      {
+        label: "Our Approach",
+        href: "#growth-system",
+        description: "The Constellation Growth System.",
+        icon: "layers",
+        panelTitle: "Our Approach",
+        panelDescription:
+          "Visibility, conversion, and proof — a framework built for revenue.",
+      },
+      {
+        label: "Blog",
+        href: "https://goconstellation.com/blog/",
+        description: "Product updates and marketing insights.",
+        icon: "pen",
+        panelTitle: "Blog",
+        panelDescription:
+          "Tactics, case studies, and industry trends for growth-minded attorneys.",
+        external: true,
+      },
+      {
+        label: "Podcast",
+        href: "https://goconstellation.com/",
+        description: "Conversations with legal marketers.",
+        icon: "mic",
+        panelTitle: "Podcast",
+        panelDescription:
+          "Hear how top firms scale with digital marketing.",
+        external: true,
+      },
+      {
+        label: "FAQ",
+        href: "#faq",
+        description: "Straight answers, no fluff.",
+        icon: "help",
+        panelTitle: "FAQ",
+        panelDescription:
+          "Contracts, ROI, practice areas, and how we report results.",
+      },
     ],
   },
 ];
