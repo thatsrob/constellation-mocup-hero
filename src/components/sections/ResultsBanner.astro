@@ -1,0 +1,36 @@
+---
+import SectionShell from "../ui/SectionShell.astro";
+import GlassCard from "../ui/GlassCard.astro";
+import { resultsStats } from "../../data/site-content";
+---
+
+<SectionShell id="content" tinted>
+  <div class="text-center">
+    <h2
+      class="text-3xl font-bold tracking-tight text-neutral-950 md:text-4xl lg:text-5xl"
+    >
+      $50,000,000+ in Attributable Revenue
+      <span class="block text-brand-dark">Generated for 200+ Law Firms</span>
+    </h2>
+    <p class="mx-auto mt-4 max-w-2xl text-lg text-neutral-600">
+      Trusted by attorneys nationwide to deliver measurable results
+    </p>
+  </div>
+
+  <div class="mt-12 grid gap-4 sm:grid-cols-3">
+    {
+      resultsStats.map((stat) => (
+        <GlassCard class="p-6 text-center sm:p-8">
+          <p class="text-3xl font-bold tracking-tight text-neutral-950 md:text-4xl">
+            {stat.value}
+          </p>
+          <p class="mt-2 text-sm leading-snug text-neutral-600">{stat.label}</p>
+        </GlassCard>
+      ))
+    }
+  </div>
+
+  <p class="mt-8 text-center text-xs font-medium uppercase tracking-wider text-neutral-500">
+    Verified Results — Data verified and updated monthly
+  </p>
+</SectionShell>

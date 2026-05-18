@@ -1,0 +1,56 @@
+---
+import SectionShell from "../ui/SectionShell.astro";
+import GlassCard from "../ui/GlassCard.astro";
+import { services, BOOK_CALL_URL } from "../../data/site-content";
+---
+
+<SectionShell id="services" tinted>
+  <p class="text-center text-sm font-semibold uppercase tracking-wider text-brand-dark">
+    Our Services
+  </p>
+  <h2
+    class="mt-2 text-center text-3xl font-bold tracking-tight text-neutral-950 md:text-4xl"
+  >
+    Full-Service Law Firm Digital Marketing Solutions
+  </h2>
+  <p class="mx-auto mt-4 max-w-2xl text-center text-lg text-neutral-600">
+    Everything you need to dominate your market and consistently attract
+    high-value cases
+  </p>
+
+  <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    {
+      services.map((service) => (
+        <GlassCard class="flex flex-col p-6 md:p-8">
+          <h3 class="text-lg font-bold text-neutral-950">{service.title}</h3>
+          <p class="mt-2 text-sm text-neutral-600">{service.description}</p>
+          <ul class="mt-4 flex-1 space-y-2">
+            {service.bullets.map((bullet) => (
+              <li class="flex gap-2 text-sm text-neutral-700">
+                <span class="text-brand" aria-hidden="true">✓</span>
+                {bullet}
+              </li>
+            ))}
+          </ul>
+        </GlassCard>
+      ))
+    }
+  </div>
+
+  <div
+    class="mt-14 rounded-3xl border border-white/60 bg-white/75 px-8 py-10 text-center shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl"
+  >
+    <h3 class="text-2xl font-bold text-neutral-950">Ready to Dominate Your Market?</h3>
+    <p class="mt-2 text-neutral-600">
+      Join 200+ law firms already winning with our proven strategies
+    </p>
+    <a
+      href={BOOK_CALL_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mt-6 inline-flex items-center justify-center rounded-full bg-brand px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-brand/25 transition-colors hover:bg-brand-dark"
+    >
+      Get Your Custom Strategy
+    </a>
+  </div>
+</SectionShell>

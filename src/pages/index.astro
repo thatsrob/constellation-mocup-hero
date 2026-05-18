@@ -1,7 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Navbar from "../components/Navbar.jsx";
+import SectionIndicator from "../components/SectionIndicator.jsx";
 import Hero from "../components/Hero.astro";
+import ResultsBanner from "../components/sections/ResultsBanner.astro";
+import PainPoints from "../components/sections/PainPoints.astro";
+import DeliverBanner from "../components/sections/DeliverBanner.astro";
+import GrowthSystem from "../components/sections/GrowthSystem.astro";
+import Comparison from "../components/sections/Comparison.astro";
+import Testimonials from "../components/sections/Testimonials.astro";
+import Services from "../components/sections/Services.astro";
+import WhyChoose from "../components/sections/WhyChoose.astro";
+import CaseStudies from "../components/sections/CaseStudies.astro";
+import FAQ from "../components/sections/FAQ.astro";
+import Guides from "../components/sections/Guides.astro";
+import FinalCTA from "../components/sections/FinalCTA.astro";
 import Footer from "../components/Footer.astro";
 ---
 
@@ -13,22 +26,21 @@ import Footer from "../components/Footer.astro";
     Skip to main content
   </a>
   <Navbar client:load />
+  <SectionIndicator client:load />
   <main id="main" tabindex="-1">
     <Hero />
-    <section
-      id="content"
-      class="min-h-screen bg-white px-6 py-24 md:px-12 lg:px-20"
-    >
-      <div class="mx-auto max-w-3xl text-center">
-        <h2 class="text-3xl font-bold tracking-tight text-neutral-900 md:text-4xl">
-          Results that compound
-        </h2>
-        <p class="mt-4 text-lg text-neutral-600">
-          Scroll landed here. Add your practice areas, services, and case
-          studies below.
-        </p>
-      </div>
-    </section>
+    <ResultsBanner />
+    <PainPoints />
+    <DeliverBanner />
+    <GrowthSystem />
+    <Comparison />
+    <Testimonials />
+    <Services />
+    <WhyChoose />
+    <CaseStudies />
+    <FAQ />
+    <Guides />
+    <FinalCTA />
   </main>
   <Footer />
 </BaseLayout>

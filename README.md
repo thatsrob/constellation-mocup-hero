@@ -4,9 +4,10 @@ A single-page marketing site for Constellation Marketing, a law firm marketing a
 
 ## Features
 
-- **Hero** — Full-viewport blurred video background, 50/50 copy and testimonial layout, stat cards, scroll-to-content control
+- **Hero** — Full-viewport blurred video background, 50/50 copy and testimonial layout, stat cards
+- **Body** — Full [goconstellation.com](https://goconstellation.com/) content: results, pain points, growth system, comparison, testimonials, services, case studies, FAQ, guides
 - **Navbar** — React island for hover dropdowns, mobile menu, and hide-near-footer behavior
-- **Footer** — Link columns, disclaimer, large wordmark, copyright bar
+- **Footer** — Link columns aligned with live site, disclaimer, large wordmark
 - **SEO** — Meta tags, Open Graph, Twitter cards, JSON-LD, sitemap, robots.txt
 
 ## Tech stack
@@ -53,7 +54,10 @@ src/
 │   └── BaseLayout.astro # HTML shell, meta, JSON-LD
 ├── pages/
 │   └── index.astro      # Home page
+├── data/
+│   └── site-content.js  # Copy from goconstellation.com
 ├── components/
+│   ├── sections/        # Page body sections (glass UI)
 │   ├── Hero.astro       # Static hero (no JS)
 │   ├── Footer.astro     # Static footer
 │   └── Navbar.jsx       # Interactive nav (client island)

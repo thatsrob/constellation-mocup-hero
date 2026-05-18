@@ -1,42 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-
-const navLinks = [
-  { label: "Results", href: "#content" },
-  {
-    label: "Practice Areas",
-    href: "#content",
-    children: [
-      { label: "Personal Injury", href: "#content" },
-      { label: "Immigration", href: "#content" },
-      { label: "Family Law", href: "#content" },
-      { label: "Criminal Defense", href: "#content" },
-      { label: "Employment Law", href: "#content" },
-    ],
-  },
-  {
-    label: "Services",
-    href: "#content",
-    children: [
-      { label: "SEO for Law Firms", href: "#content" },
-      { label: "Google Ads (PPC)", href: "#content" },
-      { label: "Website Design", href: "#content" },
-      { label: "Content Marketing", href: "#content" },
-      { label: "Local SEO", href: "#content" },
-    ],
-  },
-  {
-    label: "Resources",
-    href: "#content",
-    children: [
-      { label: "Blog", href: "#content" },
-      { label: "Case Studies", href: "#content" },
-      { label: "Marketing Guides", href: "#content" },
-      { label: "Free Tools", href: "#content" },
-    ],
-  },
-];
-
-const ctaLink = { label: "Book a Call", href: "#content" };
+import { ctaLink, navLinks } from "../data/site-content.js";
 
 const barRadius = "rounded-xl";
 
@@ -151,6 +114,8 @@ function CtaButton({ onClick, className = "" }) {
     <a
       href={ctaLink.href}
       onClick={onClick}
+      target={ctaLink.external ? "_blank" : undefined}
+      rel={ctaLink.external ? "noopener noreferrer" : undefined}
       className={`inline-flex shrink-0 items-center justify-center rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-brand/20 transition-colors hover:bg-brand-dark ${className}`}
     >
       {ctaLink.label}

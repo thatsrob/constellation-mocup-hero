@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://constellationmarketing.com/sitemap-index.xml
+Sitemap: https://goconstellation.com/sitemap-index.xml

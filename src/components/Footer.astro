@@ -1,31 +1,11 @@
 ---
+import { footerColumns, BOOK_CALL_URL } from "../data/site-content";
+
 const year = new Date().getFullYear();
-
-const companyLinks = [
-  { label: "Book a Call", href: "#content", external: true },
-  { label: "Client Results", href: "#content" },
-  { label: "About Constellation", href: "#content" },
-];
-
-const practiceLinks = [
-  { label: "Personal Injury", href: "#content" },
-  { label: "Immigration", href: "#content" },
-  { label: "Family Law", href: "#content" },
-  { label: "Criminal Defense", href: "#content" },
-];
-
-const serviceLinks = [
-  { label: "SEO for Law Firms", href: "#content" },
-  { label: "Google Ads (PPC)", href: "#content" },
-  { label: "Website Design", href: "#content" },
-  { label: "Content Marketing", href: "#content" },
-];
-
-const resourceLinks = [
-  { label: "Blog", href: "#content" },
-  { label: "Case Studies", href: "#content" },
-  { label: "Marketing Guides", href: "#content" },
-  { label: "LinkedIn", href: "https://linkedin.com", external: true },
+const columns = [
+  { title: "Practice Areas", links: footerColumns.practice },
+  { title: "Services", links: footerColumns.services },
+  { title: "Company", links: footerColumns.company },
 ];
 ---
 
@@ -35,71 +15,31 @@ const resourceLinks = [
       class="grid grid-cols-2 gap-10 border-b border-neutral-200 py-14 sm:grid-cols-4 sm:gap-8 md:py-16"
     >
       <div>
-        <p class="mb-4 text-sm font-semibold text-neutral-900">Company</p>
-        <ul class="flex flex-col gap-2.5">
-          {
-            companyLinks.map((link) => (
-              <li>
-                <a
-                  href={link.href}
-                  class="group inline-flex items-center gap-1.5 text-sm text-neutral-600 transition-colors hover:text-neutral-900"
-                  {...(link.external
-                    ? { target: "_blank", rel: "noopener noreferrer" }
-                    : {})}
-                >
-                  <span>{link.label}</span>
-                  {link.external && (
-                    <svg
-                      class="h-3.5 w-3.5 shrink-0 opacity-45"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      aria-hidden="true"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M7 17L17 7M7 7h10v10"
-                      />
-                    </svg>
-                  )}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
+        <p class="mb-4 text-sm font-semibold text-neutral-900">Contact Us</p>
+        <a
+          href={BOOK_CALL_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-dark"
+        >
+          Book a Call
+        </a>
       </div>
       {
-        [practiceLinks, serviceLinks, resourceLinks].map((links) => (
+        columns.map((col) => (
           <div>
+            <p class="mb-4 text-sm font-semibold text-neutral-900">{col.title}</p>
             <ul class="flex flex-col gap-2.5">
-              {links.map((link) => (
+              {col.links.map((link) => (
                 <li>
                   <a
                     href={link.href}
-                    class="group inline-flex items-center gap-1.5 text-sm text-neutral-600 transition-colors hover:text-neutral-900"
+                    class="text-sm text-neutral-600 transition-colors hover:text-neutral-900"
                     {...(link.external
                       ? { target: "_blank", rel: "noopener noreferrer" }
                       : {})}
                   >
-                    <span>{link.label}</span>
-                    {link.external && (
-                      <svg
-                        class="h-3.5 w-3.5 shrink-0 opacity-45"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        aria-hidden="true"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M7 17L17 7M7 7h10v10"
-                        />
-                      </svg>
-                    )}
+                    {link.label}
                   </a>
                 </li>
               ))}
@@ -107,6 +47,27 @@ const resourceLinks = [
           </div>
         ))
       }
+    </div>
+
+    <div class="border-b border-neutral-200 py-10 md:py-12">
+      <p class="mb-4 text-sm font-semibold text-neutral-900">Resources</p>
+      <ul class="flex flex-col gap-2.5 sm:columns-2">
+        {
+          footerColumns.resources.map((link) => (
+            <li class="break-inside-avoid">
+              <a
+                href={link.href}
+                class="text-sm text-neutral-600 transition-colors hover:text-neutral-900"
+                {...(link.external
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
     </div>
 
     <div
@@ -143,18 +104,9 @@ const resourceLinks = [
       class="flex flex-col gap-4 border-t border-neutral-200 py-6 text-xs text-neutral-500 sm:flex-row sm:items-center sm:justify-between sm:py-8"
     >
       <p>Constellation Marketing © {year}</p>
-      <div
-        class="flex flex-wrap items-center gap-x-5 gap-y-2 sm:justify-center"
-      >
-        <a href="#content" class="transition-colors hover:text-neutral-800">
-          Privacy Policy
-        </a>
-        <a href="#content" class="transition-colors hover:text-neutral-800">
-          Terms of Service
-        </a>
-      </div>
+      <p class="text-center">All Rights Reserved</p>
       <a
-        href="https://linkedin.com"
+        href="https://www.linkedin.com/company/constellation-marketing"
         target="_blank"
         rel="noopener noreferrer"
         class="inline-flex items-center gap-1.5 transition-colors hover:text-neutral-800 sm:justify-end"

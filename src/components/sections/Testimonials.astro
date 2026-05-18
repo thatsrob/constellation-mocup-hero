@@ -1,0 +1,38 @@
+---
+import SectionShell from "../ui/SectionShell.astro";
+import GlassCard from "../ui/GlassCard.astro";
+import { testimonials } from "../../data/site-content";
+---
+
+<SectionShell id="testimonials">
+  <div class="text-center">
+    <h2 class="text-3xl font-bold tracking-tight text-neutral-950 md:text-4xl">
+      98.7% Retention Rate in 2024
+    </h2>
+    <p class="mx-auto mt-4 max-w-2xl text-lg text-neutral-600">
+      Law firms nationwide trust our marketing agency to deliver lasting results.
+    </p>
+  </div>
+
+  <div
+    class="mt-12 flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-2 md:overflow-visible md:pb-0 lg:grid-cols-4"
+  >
+    {
+      testimonials.map((t) => (
+        <GlassCard class="min-w-[17rem] shrink-0 snap-start p-6 md:min-w-0">
+          <div class="text-amber-400" aria-label="5 star rating">
+            ★★★★★
+          </div>
+          <blockquote class="mt-3 text-sm leading-relaxed text-neutral-700">
+            "{t.quote}"
+          </blockquote>
+          <footer class="mt-4 border-t border-white/80 pt-4">
+            <p class="text-sm font-semibold text-neutral-900">{t.name}</p>
+            <p class="text-xs text-neutral-500">{t.firm}</p>
+            <p class="mt-1 text-xs font-medium text-brand-dark">{t.tag}</p>
+          </footer>
+        </GlassCard>
+      ))
+    }
+  </div>
+</SectionShell>

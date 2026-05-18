@@ -1,0 +1,38 @@
+---
+import SectionShell from "../ui/SectionShell.astro";
+import GlassCard from "../ui/GlassCard.astro";
+import { caseStudies } from "../../data/site-content";
+---
+
+<SectionShell id="case-studies" tinted>
+  <p class="text-center text-sm font-semibold uppercase tracking-wider text-brand-dark">
+    Reputation Meets Results
+  </p>
+  <h2 class="mt-2 text-center text-3xl font-bold tracking-tight text-neutral-950 md:text-4xl">
+    Award-winning strategies backed by real case studies
+  </h2>
+
+  <div class="mt-12 grid gap-6 md:grid-cols-3">
+    {
+      caseStudies.map((study) => (
+        <GlassCard class="flex flex-col p-6 md:p-8">
+          <h3 class="text-lg font-bold leading-snug text-neutral-950">
+            "{study.headline}"
+          </h3>
+          <div class="mt-auto pt-6">
+            <p class="font-semibold text-neutral-900">{study.name}</p>
+            <p class="text-sm text-neutral-500">{study.firm}</p>
+            <a
+              href={study.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-4 inline-flex text-sm font-semibold text-brand-dark hover:text-brand"
+            >
+              Read Case Study →
+            </a>
+          </div>
+        </GlassCard>
+      ))
+    }
+  </div>
+</SectionShell>

@@ -1,0 +1,45 @@
+---
+import SectionShell from "../ui/SectionShell.astro";
+import GlassCard from "../ui/GlassCard.astro";
+import { comparison } from "../../data/site-content";
+---
+
+<SectionShell id="comparison" tinted>
+  <div class="text-center">
+    <h2 class="text-3xl font-bold tracking-tight text-neutral-950 md:text-4xl">
+      Constellation vs Typical Agency
+    </h2>
+    <p class="mx-auto mt-4 max-w-xl text-lg text-neutral-600">
+      Same spend. Completely different outcomes.
+    </p>
+  </div>
+
+  <div class="mt-12 grid gap-6 md:grid-cols-2">
+    <GlassCard class="border-neutral-200/80 bg-neutral-50/60 p-8">
+      <h3 class="text-lg font-bold text-neutral-500">Typical agency</h3>
+      <ul class="mt-6 space-y-4">
+        {
+          comparison.typical.map((item) => (
+            <li class="flex gap-3 text-sm text-neutral-600">
+              <span class="mt-0.5 shrink-0 text-red-500" aria-hidden="true">✕</span>
+              {item}
+            </li>
+          ))
+        }
+      </ul>
+    </GlassCard>
+    <GlassCard class="border-brand/30 bg-brand-light/40 p-8">
+      <h3 class="text-lg font-bold text-brand-dark">Constellation</h3>
+      <ul class="mt-6 space-y-4">
+        {
+          comparison.constellation.map((item) => (
+            <li class="flex gap-3 text-sm text-neutral-800">
+              <span class="mt-0.5 shrink-0 text-brand" aria-hidden="true">✓</span>
+              {item}
+            </li>
+          ))
+        }
+      </ul>
+    </GlassCard>
+  </div>
+</SectionShell>

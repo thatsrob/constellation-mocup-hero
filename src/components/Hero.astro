@@ -1,13 +1,15 @@
 ---
+import { BOOK_CALL_URL } from "../data/site-content";
+
 const VIDEO_SRC =
   "https://videos.pexels.com/video-files/2491284/2491284-hd_1920_1080_24fps.mp4";
 const VIDEO_POSTER =
   "https://images.pexels.com/photos/313705/pexels-photo-313705.jpeg?auto=compress&cs=tinysrgb&w=1920";
 
 const STATS = [
-  { value: "$47M+", label: "Revenue driven for clients" },
-  { value: "3.2×", label: "Avg. qualified lead growth" },
-  { value: "90 days", label: "Typical time to ROI" },
+  { value: "$50M+", label: "Attributable revenue for clients" },
+  { value: "98.7%", label: "Client retention in 2024" },
+  { value: "3–20×", label: "Average ROI reported" },
 ];
 
 const AVATARS = [
@@ -23,7 +25,7 @@ const TESTIMONIAL_IMAGE =
   "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80";
 ---
 
-<section class="relative h-[100dvh] max-h-[100dvh] w-full overflow-hidden">
+<section id="hero" class="relative h-[100dvh] max-h-[100dvh] w-full overflow-hidden">
   <div class="absolute inset-0" aria-hidden="true">
     <video
       class="h-full w-full scale-105 object-cover"
@@ -85,12 +87,14 @@ const TESTIMONIAL_IMAGE =
           }
         </ul>
 
-        <a
-          href="#content"
-          class="mt-1 inline-flex w-fit shrink-0 items-center justify-center rounded-full bg-brand px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand/25 transition-colors hover:bg-brand-dark"
-        >
-          Let's Talk
-        </a>
+            <a
+              href={BOOK_CALL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-1 inline-flex w-fit shrink-0 items-center justify-center rounded-full bg-brand px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand/25 transition-colors hover:bg-brand-dark"
+            >
+              Let's Talk
+            </a>
       </div>
 
       <div

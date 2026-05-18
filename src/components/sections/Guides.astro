@@ -1,0 +1,30 @@
+---
+import SectionShell from "../ui/SectionShell.astro";
+import GlassCard from "../ui/GlassCard.astro";
+import { guides } from "../../data/site-content";
+---
+
+<SectionShell id="guides" tinted>
+  <p class="text-center text-sm font-semibold uppercase tracking-wider text-brand-dark">
+    Steal Our Winning Playbooks
+  </p>
+  <h2 class="mt-2 text-center text-3xl font-bold tracking-tight text-neutral-950 md:text-4xl">
+    Unlock Your Firm's Full Potential
+  </h2>
+  <p class="mx-auto mt-2 max-w-xl text-center text-neutral-600">
+    The Ultimate Marketing Blueprints
+  </p>
+
+  <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    {
+      guides.map((guide) => (
+        <a href={guide.href} target="_blank" rel="noopener noreferrer">
+          <GlassCard class="flex h-full flex-col items-center justify-center p-6 text-center transition-colors hover:border-brand/40 hover:bg-white/90">
+            <h3 class="font-bold text-neutral-950">{guide.title}</h3>
+            <span class="mt-3 text-sm font-semibold text-brand-dark">See Guide →</span>
+          </GlassCard>
+        </a>
+      ))
+    }
+  </div>
+</SectionShell>

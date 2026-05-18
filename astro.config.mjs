@@ -4,7 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 
 // Update to your production domain before deploy
-const site = "https://constellationmarketing.com";
+const site = "https://goconstellation.com";
 
 export default defineConfig({
   site,
